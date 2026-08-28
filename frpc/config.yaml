@@ -5,9 +5,7 @@ description: "My personal FRP Client Add-on (v0.56.2)"
 arch:
   - aarch64
   - amd64
-  - armv7
-  - i386
 startup: application
 boot: auto
 map:
-  - config:rw
+  - homeassistant_config:rw
