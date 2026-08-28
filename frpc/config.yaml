@@ -1,5 +1,5 @@
 name: "FRP Client (Custom)"
-version: "0.56.0"
+version: "0.56.1"
 slug: "my_frpc"
 description: "My personal FRP Client Add-on (v0.56.0)"
 arch:
