@@ -16,7 +16,7 @@ auth.token = "Haos_Secure_Token_2026"
 [[proxies]]
 name = "haos_web"
 type = "tcp"
-localIP = "127.0.0.1"
+localIP = "homeassistant"   # 【完美修复】使用 HAOS 内部域名直连主机
 localPort = 80
 remotePort = 8123
 EOF
