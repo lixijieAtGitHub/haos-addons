@@ -1,0 +1,13 @@
+name: "FRP Client (Custom)"
+version: "0.56.0"
+slug: "my_frpc"
+description: "My personal FRP Client Add-on (v0.56.0)"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  - i386
+startup: application
+boot: auto
+map:
+  - config:rw
