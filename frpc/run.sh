@@ -13,7 +13,7 @@ auth.token = "Haos_Secure_Token_2026"
 [[proxies]]
 name = "haos_web"
 type = "tcp"
-localIP = "homeassistant"   # 完美域名直连
+localIP = "192.168.10.105"   # 完美域名直连
 localPort = 80
 remotePort = 8123
 EOF
