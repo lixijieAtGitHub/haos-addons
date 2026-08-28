@@ -9,3 +9,11 @@ startup: application
 boot: auto
 map:
   - homeassistant_config:rw
+# 这里定义界面上默认留空
+options:
+  custom_config: ""
+
+# 这里定义界面的数据类型（str 代表文本字符串）
+schema:
+  custom_config: str
+
