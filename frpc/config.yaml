@@ -1,7 +1,7 @@
 name: "FRP Client (Custom)"
-version: "0.56.4"
+version: "0.64.0"
 slug: "my_frpc"
-description: "My personal FRP Client Add-on (v0.56.4)"
+description: "My personal FRP Client Add-on (v0.64.0)"
 # 👇 新增这行，填入你的 GitHub 仓库完整地址
 url: "http://github.com/lixijieAtGitHub/haos-addons"
 arch:
