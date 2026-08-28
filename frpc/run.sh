@@ -21,4 +21,31 @@ EOF
 echo "同步配置并启动 FRP 核心程序..."
 # 将强制更新后的配置复制到运行目录
 cp /config/frp/frpc.toml /etc/frp/frpc.toml
-exec /usr/bin/frpc -c /etc/frp/frpc.toml
+
+
+# =======================================================
+# 以下为替换原 exec 指令的新增逻辑：平滑停机 (Graceful Shutdown)
+# =======================================================
+
+# 1. 定义停机处理函数
+stop_handler() {
+    echo "收到 HAOS 停止信号，正在平滑关闭 FRP..."
+    if [ -n "$FRPC_PID" ]; then
+        kill -TERM "$FRPC_PID" 2>/dev/null
+        wait "$FRPC_PID" 2>/dev/null
+    fi
+    echo "FRP 客户端已安全停止 (Exit Code: 0)。"
+    exit 0
+}
+
+# 2. 拦截 SIGTERM 和 SIGINT 信号
+trap 'stop_handler' TERM INT
+
+# 3. 将 FRP 放在后台启动（注意末尾的 & 号，不再使用 exec）
+/usr/bin/frpc -c /etc/frp/frpc.toml &
+
+# 4. 记录后台 FRP 的进程号
+FRPC_PID=$!
+
+# 5. 挂起主脚本，等待 FRP 进程，防止容器直接退出
+wait "$FRPC_PID"
