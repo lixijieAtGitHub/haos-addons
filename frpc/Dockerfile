@@ -1,4 +1,4 @@
-FROM snowdreamtech/frpc:0.56.0
+FROM snowdreamtech/frpc:0.64.0
 
 # 提前获取 root 权限，确保后续软件安装和文件操作无权限问题
 USER root
