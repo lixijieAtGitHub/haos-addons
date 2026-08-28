@@ -9,6 +9,16 @@ A robust, gracefully-shutting-down FRP client built specifically for Home Assist
 
 ---
 
+## ⚠️ Version Compatibility / 版本兼容性说明 (CRITICAL / 必读)
+
+**This add-on is built on `FRP v0.56.0`.** 
+Due to breaking changes in FRP's configuration format (switching from `.ini` to `.toml`) and protocol updates, **your Server-side (`frps`) MUST run a compatible version (v0.56.x is strictly recommended)**. Using an outdated server version will result in connection refused or protocol mismatch errors.
+
+**本插件底层核心基于 `FRP v0.56.0` 构建。**
+由于 FRP 官方在近期版本中进行了巨大的底层重构（全面弃用 `.ini`，改用 `.toml` 格式），**请务必确保您的云端服务端（`frps`）版本与本客户端保持兼容（强烈建议服务端也更新至 v0.56.x）**。如果服务端版本过低，将直接导致“连接被拒绝”或协议不匹配等报错！
+
+---
+
 ## 🌟 Features / 核心特性
 
 - **Built for v0.56+ (TOML):** Fully utilizes the new `.toml` configuration format for FRP.
