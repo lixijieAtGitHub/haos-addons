@@ -5,4 +5,5 @@ COPY run.sh /run.sh
 USER root
 RUN chmod a+x /run.sh
 
-CMD [ "/run.sh" ]
+# 【关键修改】强制覆盖原镜像的启动入口，确保脚本执行
+ENTRYPOINT [ "/run.sh" ]
